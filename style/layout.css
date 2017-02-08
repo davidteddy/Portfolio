@@ -1,0 +1,13 @@
+.nav-bar {
+  text-align: center;
+}
+
+.nav-bar p{
+  display: inline;
+  padding-right: 25px;
+  font-size: 30px;
+  padding-bottom: 250px;
+}
+.my-bio{
+  text-align: center;
+}
