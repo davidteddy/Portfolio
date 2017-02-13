@@ -9,23 +9,39 @@
     <link rel="stylesheet" href="./style/state.css">
     <link rel="stylesheet" href="./style/theme.css">
     <title>Teddy's Portfolio</title>
+    <script id="article-template" type="text/x-handlebars-template">
+     <article class="clearfix" data-name="{{name}}" data-category="{{category}}">
+       <header>
+         <h1>{{title}}</h1>
+         <div class="byline">
+           By <address><a href="{{link}}">{{link}}</a></address>
+         </div>
+       </header>
+       <section class="discription">{{{shortDescrip}}}</section>
+       <a href="#" class="read-on">Read on &rarr;</a>
+     </article>
+   </script>
   </head>
   <body>
     <header>
       <h1>David Teddy</h1>
     </header>
     <nav class="nav-bar">
-      <p>Home</p>
+      <p><a href="#">Home</a></p>
       <p>Social</p>
       <p>My Work</p>
+      <p><a href="#">About Me</a></p>
     </nav>
     <div class="my-bio">
       <h3>Military background with love for fast cars and wild life. Huge computer nerd which made me become a Web Developer. I enjoy helping others and socializing with the human race. In the future I hope to be a skilled and successful Developer that adds to the Developer community.</h3>
     </div>
     <div class="my-work">
       <h3>My Work</h3>
+      <h4>About Me</h4>
       <h4>Salmon Cookie's</h4>
       <h4>Bus Mall</h4>
+      <article id="projects" class="tab-content">
+      </article>
     </div>
     <div class="footer-social">
       <span class="icon-mail">E-Mail</span>
@@ -33,5 +49,9 @@
       <span class="icon-github">GitHub</span>
       <span class="icon-linkedin">LinkedIn</span>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="app.js"></script>
+    <script src="bio.js"></script>
   </body>
 </html>
