@@ -1,12 +1,14 @@
 'use strict';
 var myWorks = [];
 
-function Projects(name, shortDescrip, link, dateCompleted){
-  this.name = name;
-  this.shortDescrip = shortDescrip;
-  this.link = link;
-  this.dateCompleted = dateCompleted;
+function Projects(opt){
+  this.name = opt.name;
+  this.shortDescrip = opt.shortDescrip;
+  this.link = opt.link;
+  this.dateCompleted = opt.dateCompleted;
 }
+
+
 
 Projects.prototype.toHtml = function(){
   var source = $('#projects-templates').html();
@@ -21,3 +23,14 @@ projectData.forEach(function(projectObject){
 myWorks.forEach(function(a){
   $('#projects').append(a.toHtml());
 });
+
+myWorks.handleMainNav = function() {
+  $('.nav-bar').on('click', '.tab', function(e) {
+    $('.tab-content').hide();
+    $('#' + $(this).data('content')).fadeIn();
+  });
+
+  $('.nav-bar .tab:first').click();
+};
+
+myWorks.handleMainNav();
