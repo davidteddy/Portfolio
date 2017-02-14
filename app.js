@@ -25,12 +25,12 @@ myWorks.forEach(function(a){
 });
 
 myWorks.handleMainNav = function() {
-  $('.nav-bar').on('click', '.tab', function(e) {
+  $('.nav-bar').on('click', '.tab', function() {
     $('.tab-content').hide();
     $('#' + $(this).data('content')).fadeIn();
   });
 
-  $('.nav-bar .tab:first').click();
+//  $('.nav-bar .tab:first').click();
 };
 
 myWorks.handleMainNav();
