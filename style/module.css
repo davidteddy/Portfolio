@@ -1,0 +1,26 @@
+.icon-menu{
+   float: right;
+   font-size: 30px;
+ }
+.nav-bar{
+  visibility: hidden;
+}
+.footer-social{
+float:right;
+}
+
+ @media screen and (min-width: 640px) {
+  .icon-menu{
+    display: none;
+  }
+  .nav-bar{
+    visibility: visible;
+  }
+  .nav-bar ul{
+    display: block;
+  }
+  .nav-bar li{
+    display: inline-block;
+    padding-right: 25px;
+  }
+}
