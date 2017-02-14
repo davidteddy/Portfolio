@@ -1,0 +1,51 @@
+.icon-menu{
+   float: right;
+   font-size: 30px;
+ }
+.footer-social{
+float:right;
+}
+@media screen and (max-width: 640px){
+  icon-menu{
+   float: right;
+   font-size: 30px;
+ }
+
+  .nav-bar {
+    padding: 0.1em;
+ }
+
+ .nav-bar ul {
+   display: none;
+   padding: 0;
+   list-style: none;
+   clear: both;
+ }
+
+ .nav-bar:hover ul {
+   display: block;
+ }
+
+ .nav-bar li {
+   margin-right: .4em;
+   font-size: 1.5em;
+   padding: .5em .2em;
+   border-bottom: 1px solid #ccc;
+ }
+
+}
+ @media screen and (min-width: 640px) {
+  .icon-menu{
+    display: none;
+  }
+  .nav-bar{
+    display: inline-block;
+  }
+  .nav-bar ul{
+    display: block;
+  }
+  .nav-bar li{
+    display: inline-block;
+    padding-right: 25px;
+  }
+}
