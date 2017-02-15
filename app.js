@@ -32,5 +32,23 @@ myWorks.handleMainNav = function() {
 
 //  $('.nav-bar .tab:first').click();
 };
-
+Projects.loadAll = function(myWorks) {
+  myWorks.sort(function(a,b) {
+    return (new Date(b.dateCompleted)) - (new Date(a.dateCompleted));
+  });
+  myWorks.forEach(function(ele) {
+    Projects.all.push(new Projects(ele));
+  })
+Projects.fetchAll = function(){
+  if (localStorage.myworks){
+    Projects.loadAll(JSON.parse(localStorage.getItem('myWorks')));
+    Projects.forEach();
+  } else{
+$.getJSON('data/bio.json')
+.then(function(data){
+  localStorage.setItem('myWork', JSON.stringify(data));
+  Projects.loadAll(data);
+    })
+  };
+}
 myWorks.handleMainNav();
