@@ -1,3 +1,4 @@
+[
   {
     "name": "Bus Mall",
     "link": "https://tedsters.github.io/bus-mall/",
@@ -15,5 +16,5 @@
     "link": "https://tedsters.github.io/About-Me/",
     "dateCompleted": "Jan 8, 2017",
     "shortDescrip":"This is the first site that I ever made. I worked on this in the begining of my 201 class for the first week and when we built off of it I realized how much fun coding could be and how much I would enjoy coding so much."
-  },
-];
+  }
+]
