@@ -1,0 +1,29 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "301 Project",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tedsters/Portfolio.git"
+  },
+  "keywords": [
+    "Blog",
+    "David",
+    "Teddy"
+  ],
+  "author": "David Teddy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tedsters/Portfolio/issues"
+  },
+  "homepage": "https://github.com/tedsters/Portfolio#readme"
+}

@@ -9,23 +9,38 @@
     <link rel="stylesheet" href="./style/state.css">
     <link rel="stylesheet" href="./style/theme.css">
     <title>Teddy's Portfolio</title>
+    <script id="projects-templates" type="text/x-handlebars-template">
+     <article class="clearfix" data-name="{{name}}" data-category="{{category}}">
+       <header>
+         <h1>{{name}}</h1>
+         <div class="byline">
+          <address><a href="{{link}}">{{link}}</a></address>
+         </div>
+       </header>
+       <section class="discription">{{{shortDescrip}}}</section>
+     </article>
+   </script>
   </head>
   <body>
     <header>
       <h1>David Teddy</h1>
     </header>
     <nav class="nav-bar">
-      <p>Home</p>
-      <p>Social</p>
-      <p>My Work</p>
+      <ul>
+        <li class="tab" data-content="home"><a href="#">Home</a></li>
+        <li>Social</li>
+        <li class="tab" data-content="my-work"><a href="#">My Work</a></li>
+        <li>About Me</li>
+      </ul>
+
     </nav>
-    <div class="my-bio">
+    <div class="tab-content" id="home">
       <h3>Military background with love for fast cars and wild life. Huge computer nerd which made me become a Web Developer. I enjoy helping others and socializing with the human race. In the future I hope to be a skilled and successful Developer that adds to the Developer community.</h3>
     </div>
-    <div class="my-work">
+    <div class="tab-content" id="my-work">
       <h3>My Work</h3>
-      <h4>Salmon Cookie's</h4>
-      <h4>Bus Mall</h4>
+      <article id="projects">
+      </article>
     </div>
     <div class="footer-social">
       <span class="icon-mail">E-Mail</span>
@@ -33,5 +48,12 @@
       <span class="icon-github">GitHub</span>
       <span class="icon-linkedin">LinkedIn</span>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="/public/app.js"></script>
+    <script>
+      Projects.fetchAll();
+    </script>
+    <script src="/public/projectsHide.js"></script>
   </body>
 </html>
