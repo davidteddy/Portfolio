@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./style/state.css">
     <link rel="stylesheet" href="./style/theme.css">
     <title>Teddy's Portfolio</title>
+    <script src=class="author-stats" type="text/x-handlebars-template"> amount of words in my work: {{wordCount}} </script>
     <script id="projects-templates" type="text/x-handlebars-template">
      <article class="clearfix" data-name="{{name}}" data-category="{{category}}">
        <header>
@@ -21,6 +22,9 @@
      </article>
    </script>
   </head>
+  <footer>
+ amount of words in my work: {{wordCount}}
+  </footer>
   <body>
     <header>
       <h1>David Teddy</h1>
