@@ -48,12 +48,17 @@
   }
 
   //  $('.nav-bar .tab:first').click();
-  Projects.numWordsAll = () => {
-      return Article.all.map(function(el){
+  myWorks.numWordsAll = () => {
+    return myWorks.map(function(el){
       return el.shortDescrip.split(' ').length;})
-      .reduce(function(all, cur){
-      return all + cur;})
+      // .reduce(function(all, cur){
+      //   return all + cur;})
+  }
+  myWorks.wordCount = function(){
+    $('.num-placement').text(myWorks.numWordsAll());
+  }
 
-    module.Projects = Projects;
+  myWorks.wordCount();
   myWorks.handleMainNav();
+  module.Projects = Projects;
 })(window);
