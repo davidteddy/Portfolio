@@ -36,7 +36,7 @@
     console.log('we are in the fetch all');
     if (localStorage.myWorks){
       Projects.loadall(JSON.parse(localStorage.getItem('myWorks')));
-      //callback();
+      callback();
       myWorks.wordCount();
       // myWorks.handleMainNav();
     } else {
@@ -46,7 +46,7 @@
         console.log(data,'------>');
         localStorage.setItem('myWorks', JSON.stringify(data));
         Projects.loadall(data);
-        callback();
+        // callback();
       })
       .then(function(){
         myWorks.wordCount();
