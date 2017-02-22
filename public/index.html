@@ -37,41 +37,41 @@
   <body>
     <header>
       <h1>David Teddy</h1>
+      <nav class="nav-bar">
+        <ul>
+          <li class="tab" data-content="home"><a href="/">Home</a></li>
+          <li>Social</li>
+          <li class="tab" data-content="my-work"><a href="/about">My Work</a></li>
+          <li>About Me</li>
+        </ul>
+      </nav>
     </header>
-    <nav class="nav-bar">
-      <ul>
-        <li class="tab" data-content="home"><a href="/">Home</a></li>
-        <li>Social</li>
-        <li class="tab" data-content="my-work"><a href="/about">My Work</a></li>
-        <li>About Me</li>
-      </ul>
+    <main>
 
-    </nav>
-    <div class="tab-content" id="home">
+    <section class="tab-content" id="home">
       <h3>Military background with love for fast cars and wild life. Huge computer nerd which made me become a Web Developer. I enjoy helping others and socializing with the human race. In the future I hope to be a skilled and successful Developer that adds to the Developer community.</h3>
-    </div>
-    <div class="tab-content" id="my-work">
+    </section>
+    <section class="tab-content" id="my-work">
       <h3>My Work</h3>
       <article id="projects">
       </article>
       <article class="num-placement">Number OF Words:<strong></strong>
       </article>
-    </div>
+    </section>
     <div class="footer-social">
       <span class="icon-mail">E-Mail</span>
       <span class="icon-twitter">Twitter</span>
       <span class="icon-github">GitHub</span>
       <span class="icon-linkedin">LinkedIn</span>
     </div>
+  </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="script/app.js"></script>
     <script src="/vendor/scripts/page.js"></script>
     <script src="/script/controller/repo.js"></script>
     <script src="/script/controller/aboutController.js"></script>
     <script src="/script/controller/homeController.js"></script>
-    <script src="script/app.js"></script>
-    <script type="text/JavaScript">
-      Projects.fetchAll();
-    </script>
+    <script src="/script/controller/routes.js"></script>
   </body>
 </html>

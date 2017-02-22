@@ -3,7 +3,7 @@
 (function(module) {
   const aboutController = {};
   aboutController.init = function (){
-    $('#my-works').hide();
+    $('#my-work #projects').hide();
     $('#home').show();
   }
   module.aboutController = aboutController;

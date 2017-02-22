@@ -21,24 +21,24 @@
       myWorks.push(new Projects(projectObject));
     });
   };
-  myWorks.initIndexPage = function(){
+  Projects.initIndexPage = function(){
     myWorks.forEach(function(a){
       $('#projects').append(a.toHtml());
     });
   };
-  myWorks.handleMainNav = function() {
-    $('.nav-bar').on('click', '.tab', function() {
-      $('.tab-content').hide();
-      $('#' + $(this).data('content')).fadeIn();
-    });
-  };
-  Projects.fetchAll = function(){
+  // myWorks.handleMainNav = function() {
+    // $('.nav-bar').on('click', '.tab', function() {
+      // $('.tab-content').hide();
+      // $('#' + $(this).data('content')).fadeIn();
+    // });
+  // };
+  Projects.fetchAll = function(callback){
     console.log('we are in the fetch all');
     if (localStorage.myWorks){
       Projects.loadall(JSON.parse(localStorage.getItem('myWorks')));
-      myWorks.initIndexPage();
+      //callback();
       myWorks.wordCount();
-      myWorks.handleMainNav();
+      // myWorks.handleMainNav();
     } else {
       console.log('message');
       $.getJSON('../data/bio.json')
@@ -46,11 +46,11 @@
         console.log(data,'------>');
         localStorage.setItem('myWorks', JSON.stringify(data));
         Projects.loadall(data);
-        myWorks.initIndexPage();
+        callback();
       })
       .then(function(){
         myWorks.wordCount();
-        myWorks.handleMainNav();
+        // myWorks.handleMainNav();
       })
       .catch(function(err){
         console.log(err, 'no data');
@@ -62,7 +62,6 @@
   myWorks.numWordsAll = () => {
     console.log(myWorks);
     return myWorks.map(function(el){
-      console.log('55555555------------------>', el);
       return el.shortDescrip.split(' ').length;
     })
     .reduce(function(all, cur) {

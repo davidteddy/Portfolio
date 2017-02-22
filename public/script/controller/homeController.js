@@ -1,12 +1,12 @@
 'use strict';
 
 (function(module) {
-  const articleController = {};
-  articleController.init = function(){
-
-    Projects.fetchAll(articleController.initIndexPage);
-    $('main section').hide();
-    $('#articles').show();
+  const homeController = {};
+  homeController.init = function(){
+    $('#my-work #projects').empty();
+    Projects.fetchAll(Projects.initIndexPage);
+    $('#home').hide();
+    $('#my-work #projects').show();
   }
-  module.articleController = articleController;
+  module.homeController = homeController;
 })(window);
