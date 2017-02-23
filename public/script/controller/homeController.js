@@ -4,9 +4,9 @@
   const homeController = {};
   homeController.init = function(){
     // $('#my-work #projects').empty();
-    Projects.fetchAll(Projects.initIndexPage);
-    $('#home').hide();
-    $('#my-work #projects').show();
+
+    $('#my-work #projects').hide();
+    $('#home').show();
   }
   module.homeController = homeController;
 })(window);

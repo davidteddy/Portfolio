@@ -71,7 +71,7 @@
   myWorks.wordCount = function(){
     $('.num-placement strong').text(myWorks.numWordsAll());
   }
-
+Projects.fetchAll(Projects.initIndexPage);
 
   module.Projects = Projects;
 })(window);
