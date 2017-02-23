@@ -46,7 +46,7 @@
         console.log(data,'------>');
         localStorage.setItem('myWorks', JSON.stringify(data));
         Projects.loadall(data);
-        // callback();
+         callback();
       })
       .then(function(){
         myWorks.wordCount();

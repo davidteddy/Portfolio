@@ -3,6 +3,8 @@
 (function(module) {
   const aboutController = {};
   aboutController.init = function (){
+    $('main > article').hide();
+    $('#repos').hide();
     $('#home').hide();
     $('#my-work #projects').show();
   }

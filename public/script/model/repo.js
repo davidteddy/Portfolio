@@ -8,12 +8,13 @@
       url: 'https://api.github.com/user/repos?type=owner',
       method: 'GET',
       headers: {
-        'Authorization': `${githubToken}`
+        'Authorization': `token ${gitHubToken}`
       }
     })
   .then(data => repos.all = data, err => console.err(err))
   .then(callback);
   };
+
   repos.with = attr => repos.all.filter(repo => repo[attr]);
 
   module.repos = repos;
