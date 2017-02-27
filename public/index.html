@@ -9,7 +9,19 @@
     <link rel="stylesheet" href="./style/state.css">
     <link rel="stylesheet" href="./style/theme.css">
     <title>Teddy's Portfolio</title>
-    <script src=class="author-stats" type="text/x-handlebars-template"> amount of words in my work: {{wordCount}} </script>
+    <script id="number-templates" type="text/x-handlebars-template">number of words in body: {{numWords}}</script>
+     <script id="repo-template" type="text/x-handlebars-template">
+        <li>
+       <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
+         <p>Description: {{description}}</p>
+         <p>Language: {{language}}</p>
+         <p>Created: {{created_at}}</p>
+         <p>Last updated: {{updated_at}}</p>
+          {{#if watchers_count}}
+            <p>{{watchers_count}} watching this repo</p>
+          {{/if}}
+       </li>
+     </script>
     <script id="projects-templates" type="text/x-handlebars-template">
      <article class="clearfix" data-name="{{name}}" data-category="{{category}}">
        <header>
@@ -22,42 +34,51 @@
      </article>
    </script>
   </head>
-  <footer>
- amount of words in my work: {{wordCount}}
-  </footer>
   <body>
     <header>
       <h1>David Teddy</h1>
+      <nav class="nav-bar">
+        <ul>
+          <li class="tab" data-content="home"><a href="/">Home</a></li>
+          <li>Social</li>
+          <li class="tab" data-content="my-work"><a href="/about">My Work</a></li>
+          <li class="tab" data-content="repos"><a href="/repos">Repo's</a></li>
+          <li>About Me</li>
+        </ul>
+      </nav>
     </header>
-    <nav class="nav-bar">
-      <ul>
-        <li class="tab" data-content="home"><a href="#">Home</a></li>
-        <li>Social</li>
-        <li class="tab" data-content="my-work"><a href="#">My Work</a></li>
-        <li>About Me</li>
-      </ul>
+    <main>
 
-    </nav>
-    <div class="tab-content" id="home">
+    <section class="tab-content" id="home">
       <h3>Military background with love for fast cars and wild life. Huge computer nerd which made me become a Web Developer. I enjoy helping others and socializing with the human race. In the future I hope to be a skilled and successful Developer that adds to the Developer community.</h3>
-    </div>
-    <div class="tab-content" id="my-work">
+    </section>
+    <section class="tab-content" id="my-work">
       <h3>My Work</h3>
       <article id="projects">
       </article>
-    </div>
+      <article id="repos"><ul>
+      </ul>
+      </article>
+      <article class="num-placement">Number OF Words:<strong></strong>
+      </article>
+    </section>
     <div class="footer-social">
       <span class="icon-mail">E-Mail</span>
       <span class="icon-twitter">Twitter</span>
       <span class="icon-github">GitHub</span>
       <span class="icon-linkedin">LinkedIn</span>
     </div>
+  </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <script src="/public/app.js"></script>
-    <script>
-      Projects.fetchAll();
-    </script>
-    <script src="/public/projectsHide.js"></script>
+    <script src="script/app.js"></script>
+    <script src="script/repoView.js"></script>
+    <script src="/vendor/scripts/page.js"></script>
+    <script src="githubToken.js"></script>
+    <script src="/script/model/repo.js"></script>
+    <script src="/script/controller/aboutController.js"></script>
+    <script src="/script/controller/homeController.js"></script>
+    <script src="/script/controller/reposController.js"></script>
+    <script src="/script/controller/routes.js"></script>
   </body>
 </html>

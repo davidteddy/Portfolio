@@ -1,17 +1,16 @@
 'use strict';
+
 (function(module){
   var myWorks = [];
 
-  function Projects(opt){
+  function Projects(opt) {
     this.name = opt.name;
     this.shortDescrip = opt.shortDescrip;
     this.link = opt.link;
     this.dateCompleted = opt.dateCompleted;
   }
 
-
-
-  Projects.prototype.toHtml = function(){
+  Projects.prototype.toHtml = function() {
     var source = $('#projects-templates').html();
     var templateRender = Handlebars.compile(source);
     return templateRender(this);
@@ -22,38 +21,57 @@
       myWorks.push(new Projects(projectObject));
     });
   };
-  myWorks.initIndexPage = function(){
+  Projects.initIndexPage = function(){
     myWorks.forEach(function(a){
       $('#projects').append(a.toHtml());
     });
   };
-  myWorks.handleMainNav = function() {
-    $('.nav-bar').on('click', '.tab', function() {
-      $('.tab-content').hide();
-      $('#' + $(this).data('content')).fadeIn();
-    });
-  };
-  Projects.fetchAll = function(){
+  // myWorks.handleMainNav = function() {
+    // $('.nav-bar').on('click', '.tab', function() {
+      // $('.tab-content').hide();
+      // $('#' + $(this).data('content')).fadeIn();
+    // });
+  // };
+  Projects.fetchAll = function(callback){
+    console.log('we are in the fetch all');
     if (localStorage.myWorks){
       Projects.loadall(JSON.parse(localStorage.getItem('myWorks')));
-      myWorks.initIndexPage();
+      callback();
+      myWorks.wordCount();
+      // myWorks.handleMainNav();
     } else {
-      $.getJSON('/public/bio.json')
+      console.log('message');
+      $.getJSON('../data/bio.json')
       .then(function(data){
+        console.log(data,'------>');
         localStorage.setItem('myWorks', JSON.stringify(data));
         Projects.loadall(data);
-        myWorks.initIndexPage();
-      });
+         callback();
+      })
+      .then(function(){
+        myWorks.wordCount();
+        // myWorks.handleMainNav();
+      })
+      .catch(function(err){
+        console.log(err, 'no data');
+      })
     }
   }
 
   //  $('.nav-bar .tab:first').click();
-  Projects.numWordsAll = () => {
-      return Article.all.map(function(el){
-      return el.shortDescrip.split(' ').length;})
-      .reduce(function(all, cur){
-      return all + cur;})
+  myWorks.numWordsAll = () => {
+    console.log(myWorks);
+    return myWorks.map(function(el){
+      return el.shortDescrip.split(' ').length;
+    })
+    .reduce(function(all, cur) {
+      return all + cur;
+    }, 0)
+  }
+  myWorks.wordCount = function(){
+    $('.num-placement strong').text(myWorks.numWordsAll());
+  }
+  Projects.fetchAll(Projects.initIndexPage);
 
-    module.Projects = Projects;
-  myWorks.handleMainNav();
+  module.Projects = Projects;
 })(window);
