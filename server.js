@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const requestProxy = require('express-request-proxy');
 const PORT = process.env.PORT || 3000;
+const client = new pg.Client(conString);
+
 
 app.use(express.static('./public'));
 const conString = 'postgres://postgres:1234@localhost:5432/postgres';
