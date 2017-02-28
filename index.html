@@ -28,17 +28,34 @@
     <div class="my-bio">
       <h3>Military background with love for fast cars and wild life. Huge computer nerd which made me become a Web Developer. I enjoy helping others and socializing with the human race. In the future I hope to be a skilled and successful Developer that adds to the Developer community.</h3>
     </div>
-    <div class="my-work">
-      <h3>My Work</h3>
-      <h4>Salmon Cookie's</h4>
-      <h4>Bus Mall</h4>
-    </div>
-  </body>
-  <footer class="footer-social">
-
-    <span class="icon-mail">E-Mail</span>
-    <span class="icon-twitter">Twitter</span>
-    <span class="icon-github">GitHub</span>
-    <span class="icon-linkedin">LinkedIn</span>
-  </footer>
+    <nav class="main-nav">
+     <div class="icon-menu"></div>
+     <ul>
+       <li class="tab" data-content="articles"><a href="#" class="icon-home"> Home</a></li>
+       <li class="tab" data-content="about"><a href="#" class="icon-address-book"> About</a></li>
+       <li><a href="http://twitter.com/dteddy1989" target="_blank" class="icon-twitter3"> Twitter</a></li>
+       <li><a href="http://github.com/tedsters" target="_blank" class="icon-github"> GitHub</a></li>
+     </ul>
+   </nav>
+ </header>
+ <main>
+   <section id="projects">
+     <article class="template" data-category="cat">
+       <header>
+         <h1>Title</h1>
+         <div class="byline">
+           published <time pubdate datetime="2000-01-01">Publish Time</time>
+         </div>
+       </header>
+       <section class="project-body"></section>
+     </article>
+   </section>
+ </main>
+ <footer>
+   &copy; 2017 David Teddy | Project Portfolio
+ </footer>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="bio.js"></script>
+</body>
 </html>
